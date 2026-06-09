@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>4.0.6</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>org.example</groupId>
+    <artifactId>moto-advisor</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>moto-advisor</name>
+    <description>Intelligent motorcycle advisor — Spring Boot + OWL + JADE</description>
+    <url/>
+    <licenses><license/></licenses>
+    <developers><developer/></developers>
+    <scm>
+        <connection/><developerConnection/><tag/><url/>
+    </scm>
+
+    <!-- ===================================================================
+         Properties
+         =================================================================== -->
+    <properties>
+        <java.version>21</java.version>
+        <!-- Explicit version pins (overrides Spring Boot BOM where needed) -->
+        <owlapi.version>5.5.1</owlapi.version>
+        <jade.version>4.6.0</jade.version>
+        <sqlite.version>3.45.1.0</sqlite.version>
+        <commons-csv.version>1.10.0</commons-csv.version>
+    </properties>
+
+    <!-- ===================================================================
+         Additional Repositories
+         JADE is NOT on Maven Central.
+         The JAR is installed in the local Maven repository via:
+
+           curl -o jade-4.6.0.jar https://jade.tilab.com/maven/com/tilab/jade/jade/4.6.0/jade-4.6.0.jar
+           curl -o jade-4.6.0.pom https://jade.tilab.com/maven/com/tilab/jade/jade/4.6.0/jade-4.6.0.pom
+           mvn install:install-file -Dfile=jade-4.6.0.jar -DpomFile=jade-4.6.0.pom \
+               -DgroupId=com.tilab.jade -DartifactId=jade -Dversion=4.6.0 -Dpackaging=jar
+
+         The tilab repo is kept as fallback for CI environments that
+         have the SSL cert in their trust store.
+         =================================================================== -->
+    <repositories>
+        <repository>
+            <id>jade-tilab</id>
+            <name>JADE Tilab Repository</name>
+            <url>https://jade.tilab.com/maven/</url>
+        </repository>
+    </repositories>
+
+    <!-- ===================================================================
+         Dependencies
+         Groups (matching Step 1.2 requirements):
+           1. Web (Spring MVC)
+           2. Thymeleaf
+           3. JPA + SQLite
+           4. OWL API
+           5. JADE
+           6. Commons CSV
+           7. Dev utilities (DevTools, Lombok)
+           8. Tests
+         =================================================================== -->
+    <dependencies>
+
+        <!-- ── 1. Web ─────────────────────────────────────────────────── -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
+        </dependency>
+        <!-- Bean Validation (@Valid / @NotBlank etc.) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <!-- ── 2. Thymeleaf ───────────────────────────────────────────── -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <!-- ── 3. JPA + SQLite ────────────────────────────────────────── -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <!-- SQLite JDBC driver -->
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>${sqlite.version}</version>
+        </dependency>
+        <!-- Hibernate dialect for SQLite (not shipped with Hibernate core) -->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-community-dialects</artifactId>
+        </dependency>
+
+        <!-- ── 4. OWL API ─────────────────────────────────────────────── -->
+        <!--
+            owlapi-distribution bundles the full API + default reasoner (HermiT).
+            Used in OntologyService to load/query the motorcycle ontology.
+        -->
+        <dependency>
+            <groupId>net.sourceforge.owlapi</groupId>
+            <artifactId>owlapi-distribution</artifactId>
+            <version>${owlapi.version}</version>
+        </dependency>
+
+        <!-- ── 5. JADE ────────────────────────────────────────────────── -->
+        <!--
+            JADE is on the tilab Maven repo (NOT Maven Central).
+            Repository declared above: https://jade.tilab.com/maven/
+            Used for multi-agent ACL messaging (UserAgent ↔ AdvisorAgent).
+            Agent implementation lives in the `agent` package (post-MVP wiring).
+        -->
+        <dependency>
+            <groupId>com.tilab.jade</groupId>
+            <artifactId>jade</artifactId>
+            <version>${jade.version}</version>
+        </dependency>
+
+        <!-- ── 6. Commons CSV ─────────────────────────────────────────── -->
+        <!--
+            Used by CsvImportService to parse the seed motorcycle dataset.
+        -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>${commons-csv.version}</version>
+        </dependency>
+
+        <!-- ── 7. Dev utilities ───────────────────────────────────────── -->
+        <!-- Compile-time code generation (@Getter, @Builder, @Slf4j, …) -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- ── 8. Tests ───────────────────────────────────────────────── -->
+        <!--
+            spring-boot-starter-test includes:
+              JUnit 5, Mockito, AssertJ, MockMvc, Spring Test context support
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webmvc-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <!-- ===================================================================
+         Build
+         =================================================================== -->
+    <build>
+        <plugins>
+            <!-- Repackage into executable fat-jar; exclude Lombok from output -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <!-- Lombok annotation processing for both compile and test-compile -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-compile</id>
+                        <phase>compile</phase>
+                        <goals><goal>compile</goal></goals>
+                        <configuration>
+                            <annotationProcessorPaths>
+                                <path>
+                                    <groupId>org.projectlombok</groupId>
+                                    <artifactId>lombok</artifactId>
+                                </path>
+                            </annotationProcessorPaths>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>default-testCompile</id>
+                        <phase>test-compile</phase>
+                        <goals><goal>testCompile</goal></goals>
+                        <configuration>
+                            <annotationProcessorPaths>
+                                <path>
+                                    <groupId>org.projectlombok</groupId>
+                                    <artifactId>lombok</artifactId>
+                                </path>
+                            </annotationProcessorPaths>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Moto Advisor - Search</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}" href="/css/app.css"/>
+</head>
+<body>
+
+<div class="page-shell">
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-mark">🏍️</div>
+            <div class="brand-copy">
+                <h1>Moto Advisor</h1>
+                <p>Smart motorcycle discovery for rider profile, budget and segment fit.</p>
+            </div>
+        </div>
+
+        <nav class="nav-links" aria-label="Primary navigation">
+            <a class="nav-pill" th:href="@{/admin/import}">⚙️ Admin import</a>
+            <a class="nav-pill" th:href="@{/admin/agent-logs}">📜 Agent logs</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <span class="eyebrow">Motorcycle recommendation flow</span>
+            <h2 class="hero-title">Find the motorcycle that fits you - not just the catalog.</h2>
+            <p class="hero-text">
+                Enter your experience level, preferred segment, engine displacement, and budget,
+                and the app will return the most suitable options with an explanation for each recommendation.
+            </p>
+
+            <ul class="hero-points">
+                <li>Filter by rider experience, segment, engine range, and maximum budget.</li>
+                <li>Get ranked results with a score and a short recommendation reason.</li>
+                <li>Track agent flow and admin import processes from one place.</li>
+            </ul>
+
+            <div class="actions" style="margin-top: 18px;">
+                <a class="btn btn-primary hero-jump" href="#search-criteria">Start from Search criteria</a>
+            </div>
+        </div>
+
+        <aside class="hero-card">
+            <h3>Quick profile guide</h3>
+            <p class="muted" style="color: rgba(226,232,240,0.76); margin: 10px 0 0;">
+                Useful if you are not sure how to fill in the criteria.
+            </p>
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <div class="stat-label">BEGINNER</div>
+                    <div class="stat-value">easier handling</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">INTERMEDIATE</div>
+                    <div class="stat-value">balance and comfort</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">ADVANCED</div>
+                    <div class="stat-value">more power</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">ANY segment</div>
+                    <div class="stat-value">broader suggestions</div>
+                </div>
+            </div>
+        </aside>
+    </section>
+
+    <div class="layout-grid">
+        <section class="panel panel-cta" id="search-criteria">
+            <div class="panel-head">
+                <div>
+                    <h3>Search criteria</h3>
+                    <p class="section-subtitle">Fill in the core parameters and start the recommendation.</p>
+                </div>
+                <span class="badge badge-primary">Start here</span>
+            </div>
+
+            <form id="searchForm" th:action="@{/search}" th:object="${searchForm}" method="post" novalidate>
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="experienceLevel">Rider Experience <span class="req">*</span></label>
+                        <select id="experienceLevel" th:field="*{criteria.experienceLevel}">
+                            <option value="">-- Select experience --</option>
+                            <option th:each="lvl : ${experienceLevels}" th:value="${lvl}" th:text="${lvl}"></option>
+                        </select>
+                        <span class="hint">Use your current real level, not the one you want to reach in a few months.</span>
+                        <span class="error field-error" id="err-experienceLevel"
+                              th:text="${#fields.hasErrors('criteria.experienceLevel')} ? 'Rider experience is required' : ''"
+                              th:style="${#fields.hasErrors('criteria.experienceLevel')} ? '' : 'display:none'"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="preferredCategory">Preferred Segment <span class="req">*</span></label>
+                        <select id="preferredCategory" th:field="*{criteria.preferredCategory}">
+                            <option value="">-- Select segment --</option>
+                            <option th:each="cat : ${categories}" th:value="${cat}" th:text="${cat}"></option>
+                        </select>
+                        <span class="hint">Choose <strong>ANY</strong> if you want a broader set of suggestions.</span>
+                        <span class="error field-error" id="err-preferredCategory"
+                              th:text="${#fields.hasErrors('criteria.preferredCategory')} ? 'Preferred segment is required' : ''"
+                              th:style="${#fields.hasErrors('criteria.preferredCategory')} ? '' : 'display:none'"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="minEngineSizeCc">Minimum Engine CC</label>
+                        <input type="number" min="0" id="minEngineSizeCc" th:field="*{criteria.minEngineSizeCc}" placeholder="e.g. 300"/>
+                        <span class="hint">Useful if you are looking for a minimum power threshold or a touring-oriented bike.</span>
+                    </div>
+
+                    <div class="field">
+                        <label for="maxEngineSizeCc">Maximum Engine CC</label>
+                        <input type="number" min="0" id="maxEngineSizeCc" th:field="*{criteria.maxEngineSizeCc}" placeholder="e.g. 900"/>
+                        <span class="hint">Enter <strong>0</strong> if you do not want an upper limit.</span>
+                    </div>
+
+                    <div class="field">
+                        <label for="maxBudgetEur">Maximum Budget (EUR)</label>
+                        <input type="number" min="0" id="maxBudgetEur" th:field="*{criteria.maxBudgetEur}" placeholder="e.g. 12000"/>
+                        <span class="hint">Enter <strong>0</strong> if you want to ignore budget.</span>
+                    </div>
+
+                    <div class="field">
+                        <label for="preferredBrand">Preferred Brand</label>
+                        <input type="text" id="preferredBrand" th:field="*{criteria.preferredBrand}" placeholder="e.g. Honda, Yamaha, BMW"/>
+                        <span class="hint">Optional - leave blank for brand-agnostic results.</span>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-primary" type="submit">🔎 Find recommendations</button>
+                </div>
+            </form>
+        </section>
+
+        <aside class="section-stack">
+            <section class="panel">
+                <div class="panel-head">
+                    <div>
+                        <h3>How it works</h3>
+                        <p class="section-subtitle">A short overview of the application flow.</p>
+                    </div>
+                </div>
+
+                <ul class="stack-list">
+                    <li>Validates input criteria and reference values.</li>
+                    <li>Runs the recommendation flow through services and the agent bridge.</li>
+                    <li>Returns ranked results with explanations and fallback status when needed.</li>
+                </ul>
+            </section>
+
+            <section class="panel">
+                <div class="panel-head">
+                    <div>
+                        <h3>Popular segments</h3>
+                        <p class="section-subtitle">Frequently used categories.</p>
+                    </div>
+                </div>
+
+                <div class="tiles-grid">
+                    <div class="tile"><span class="label">Urban</span><span class="value">COMMUTER</span></div>
+                    <div class="tile"><span class="label">Weekend</span><span class="value">NAKED</span></div>
+                    <div class="tile"><span class="label">Travel</span><span class="value">TOURING</span></div>
+                    <div class="tile"><span class="label">Mixed terrain</span><span class="value">ADVENTURE</span></div>
+                </div>
+            </section>
+        </aside>
+    </div>
+</div>
+
+<script>
+    (() => {
+        // ── Required field definitions ──────────────────────────────────
+        const REQUIRED = [
+            { id: 'experienceLevel',  errId: 'err-experienceLevel',  msg: 'Rider experience is required' },
+            { id: 'preferredCategory', errId: 'err-preferredCategory', msg: 'Preferred segment is required' }
+        ];
+
+        // ── Show / hide inline error helper ─────────────────────────────
+        function setError(errId, message) {
+            const el = document.getElementById(errId);
+            if (!el) return;
+            const field = el.closest('.field');
+            if (message) {
+                el.textContent = message;
+                el.style.display = '';
+                field?.classList.add('field--error');
+            } else {
+                el.textContent = '';
+                el.style.display = 'none';
+                field?.classList.remove('field--error');
+            }
+        }
+
+        // ── Clear error when user picks a value ─────────────────────────
+        // On page load: if server already rendered visible error spans, mark the field
+        REQUIRED.forEach(({ errId }) => {
+            const errEl = document.getElementById(errId);
+            if (errEl && errEl.style.display !== 'none' && errEl.textContent.trim() !== '') {
+                errEl.closest('.field')?.classList.add('field--error');
+            }
+        });
+
+        REQUIRED.forEach(({ id, errId }) => {
+            const input = document.getElementById(id);
+            if (!input) return;
+            input.addEventListener('change', () => {
+                if (input.value) setError(errId, null);
+            });
+        });
+
+        // ── Clear CC default 0 on focus ──────────────────────────────────
+        ['minEngineSizeCc', 'maxEngineSizeCc'].forEach((id) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.addEventListener('focus', () => {
+                if (el.value === '0') el.value = '';
+            });
+        });
+
+        // ── Client-side form validation (no POST if invalid) ─────────────
+        const form = document.getElementById('searchForm');
+        if (!form) return;
+
+        form.addEventListener('submit', (e) => {
+            let firstInvalidId = null;
+
+            // Validate required selects
+            REQUIRED.forEach(({ id, errId, msg }) => {
+                const input = document.getElementById(id);
+                if (!input) return;
+                if (!input.value || input.value.trim() === '') {
+                    setError(errId, msg);
+                    if (!firstInvalidId) firstInvalidId = id;
+                } else {
+                    setError(errId, null);
+                }
+            });
+
+            if (firstInvalidId) {
+                e.preventDefault();
+                // Scroll invalid field into view smoothly, no page jump
+                document.getElementById(firstInvalidId)
+                    ?.closest('.field')
+                    ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+
+            // All valid – fill empty numeric fields with 0 (= no limit)
+            ['minEngineSizeCc', 'maxEngineSizeCc', 'maxBudgetEur'].forEach((id) => {
+                const input = document.getElementById(id);
+                if (input && input.value === '') input.value = '0';
+            });
+        });
+    })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Moto Advisor - Results</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}" href="/css/app.css"/>
+</head>
+<body>
+
+<div class="page-shell">
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-mark">🏁</div>
+            <div class="brand-copy">
+                <h1>Recommendation Results</h1>
+                <p th:text="'Found ' + ${resultCount} + ' recommendation(s). Source: ' + ${resultSource}"></p>
+            </div>
+        </div>
+
+        <nav class="nav-links" aria-label="Secondary navigation">
+            <a class="nav-pill" th:href="@{/}">🔍 Back to search</a>
+            <a class="nav-pill" th:href="@{/admin/import}">⚙️ Admin import</a>
+            <a class="nav-pill" th:href="@{/admin/agent-logs}">📜 Agent logs</a>
+        </nav>
+    </header>
+
+    <section class="hero" style="grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.9fr);">
+        <div>
+            <span class="eyebrow">Search outcome</span>
+            <h2 class="hero-title">Your results are ready.</h2>
+            <p class="hero-text">
+                Below you can review ranked suggestions based on your selected criteria, result source,
+                and a short explanation for each recommendation.
+            </p>
+
+            <div class="criteria-grid" style="margin-top: 24px;">
+                <div class="criteria-item">
+                    <span class="label">Experience</span>
+                    <span class="value" th:text="${criteria.experienceLevel}"></span>
+                </div>
+                <div class="criteria-item">
+                    <span class="label">Segment</span>
+                    <span class="value" th:text="${criteria.preferredCategory}"></span>
+                </div>
+                <div class="criteria-item">
+                    <span class="label">Budget</span>
+                    <span class="value" th:text="${criteria.maxBudgetEur} + ' EUR'"></span>
+                </div>
+                <div class="criteria-item">
+                    <span class="label">CC range</span>
+                    <span class="value" th:text="${criteria.minEngineSizeCc} + ' - ' + ${criteria.maxEngineSizeCc}"></span>
+                </div>
+            </div>
+        </div>
+
+        <aside class="hero-card">
+            <h3>Session snapshot</h3>
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <div class="stat-label">Results</div>
+                    <div class="stat-value" th:text="${resultCount}"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Source</div>
+                    <div class="stat-value" th:text="${resultSource}"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Fallback</div>
+                    <div class="stat-value" th:text="${fallbackUsed} ? 'YES' : 'NO'"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Agent messages</div>
+                    <div class="stat-value" th:text="${agentMessages != null ? #lists.size(agentMessages) : 0}"></div>
+                </div>
+            </div>
+        </aside>
+    </section>
+
+    <section class="panel" th:if="${fallbackUsed}">
+        <div class="message message-warning">
+            Agent response could not be completed. Displaying RecommendationService fallback results.
+        </div>
+    </section>
+
+    <section class="panel" th:if="${errors != null and !#lists.isEmpty(errors)}">
+        <div class="panel-head">
+            <div>
+                <h3>Execution notes</h3>
+                <p class="section-subtitle">Messages returned during execution.</p>
+            </div>
+            <span class="badge badge-danger">Needs attention</span>
+        </div>
+        <div th:each="e : ${errors}" class="message message-error" th:text="${e}"></div>
+    </section>
+
+    <section class="panel">
+        <div class="panel-head">
+            <div>
+                <h3>Selected criteria</h3>
+                <p class="section-subtitle">Parameters used for the current recommendation.</p>
+            </div>
+            <span class="badge badge-primary">Search context</span>
+        </div>
+
+        <div class="actions" style="margin-top: 0;">
+            <span class="pill" th:text="'Experience: ' + ${criteria.experienceLevel}"></span>
+            <span class="pill" th:text="'Segment: ' + ${criteria.preferredCategory}"></span>
+            <span class="pill" th:text="'Budget: ' + ${criteria.maxBudgetEur} + ' EUR'"></span>
+            <span class="pill" th:text="'CC range: ' + ${criteria.minEngineSizeCc} + '-' + ${criteria.maxEngineSizeCc}"></span>
+            <span class="pill" th:if="${criteria.preferredBrand != null and !#strings.isEmpty(criteria.preferredBrand)}"
+                  th:text="'Brand: ' + ${criteria.preferredBrand}"></span>
+        </div>
+    </section>
+
+    <section class="panel">
+        <div class="panel-head">
+            <div>
+                <h3>Recommended motorcycles</h3>
+                <p class="section-subtitle">Click the columns to sort by text and numeric values.</p>
+            </div>
+            <span class="badge" th:classappend="${resultCount > 0} ? ' badge-success' : ' badge-warning'"
+                  th:text="${resultCount > 0} ? 'Matches found: ' + ${resultCount} : 'No direct matches'"></span>
+        </div>
+
+        <div class="table-wrap" th:if="${resultCount > 0}">
+            <table id="resultsTable" class="table">
+                <thead>
+                <tr>
+                    <th class="sortable" data-sort-type="text">Brand</th>
+                    <th class="sortable" data-sort-type="text">Model</th>
+                    <th class="sortable" data-sort-type="text">Segment</th>
+                    <th class="sortable" data-sort-type="number">Engine</th>
+                    <th class="sortable" data-sort-type="number">Price</th>
+                    <th class="sortable" data-sort-type="text">Experience</th>
+                    <th class="sortable" data-sort-type="number">Score</th>
+                    <th class="sortable" data-sort-type="text">Explanation</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="r : ${results}">
+                    <td>
+                        <span class="badge badge-primary" th:text="${r.brand}"></span>
+                    </td>
+                    <td>
+                        <div class="result-name">
+                            <strong th:text="${r.modelName}"></strong>
+                            <span class="muted" th:text="${r.brand}"></span>
+                        </div>
+                    </td>
+                    <td th:text="${r.category}"></td>
+                    <td th:text="${r.engineSizeCc} + ' cc'"></td>
+                    <td th:text="${r.priceEur} + ' EUR'"></td>
+                    <td th:text="${r.experienceLevel}"></td>
+                    <td class="score" th:text="${r.score}"></td>
+                    <td class="result-reason" th:text="${r.reason}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="empty-state" th:if="${resultCount == 0}">
+            No motorcycles match this criteria set. Try widening your segment, budget, or CC range.
+        </div>
+    </section>
+
+    <section class="panel" th:if="${agentMessages != null and !#lists.isEmpty(agentMessages)}">
+        <div class="panel-head">
+            <div>
+                <h3>Agent flow summary</h3>
+                <p class="section-subtitle">Latest messages related to this recommendation session.</p>
+            </div>
+            <span class="badge badge-dark">Trace view</span>
+        </div>
+
+        <div class="table-wrap">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Performative</th>
+                    <th>Conversation</th>
+                    <th>Summary</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="m : ${agentMessages}">
+                    <td th:text="${#temporals.format(m.createdAt, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                    <td th:text="${m.sender}"></td>
+                    <td th:text="${m.receiver}"></td>
+                    <td><span class="badge badge-primary" th:text="${m.performative}"></span></td>
+                    <td th:text="${m.conversationId}"></td>
+                    <td class="result-reason" th:text="${m.content}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+
+<script>
+    (() => {
+        const table = document.getElementById('resultsTable');
+        if (!table) return;
+
+        const headers = Array.from(table.querySelectorAll('thead th.sortable'));
+        const body = table.querySelector('tbody');
+        if (!body || headers.length === 0) return;
+
+        const parseNumber = (value) => {
+            const match = String(value).replace(/,/g, '').match(/-?\d+(?:\.\d+)?/);
+            return match ? Number(match[0]) : Number.NEGATIVE_INFINITY;
+        };
+
+        headers.forEach((header, index) => {
+            header.addEventListener('click', () => {
+                const current = header.classList.contains('asc') ? 'asc'
+                        : header.classList.contains('desc') ? 'desc'
+                        : null;
+                const next = current === 'asc' ? 'desc' : 'asc';
+                const type = header.dataset.sortType || 'text';
+
+                headers.forEach((h) => h.classList.remove('asc', 'desc'));
+                header.classList.add(next);
+
+                const rows = Array.from(body.querySelectorAll('tr'));
+                rows.sort((a, b) => {
+                    const aText = a.children[index]?.innerText.trim() ?? '';
+                    const bText = b.children[index]?.innerText.trim() ?? '';
+
+                    let result;
+                    if (type === 'number') {
+                        result = parseNumber(aText) - parseNumber(bText);
+                    } else {
+                        result = aText.localeCompare(bText, undefined, { numeric: true, sensitivity: 'base' });
+                    }
+
+                    return next === 'asc' ? result : -result;
+                });
+
+                body.replaceChildren(...rows);
+            });
+        });
+    })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Admin - CSV Import and OWL Maintenance</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}" href="/css/app.css"/>
+</head>
+<body>
+
+<div class="page-shell">
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-mark">🛠️</div>
+            <div class="brand-copy">
+                <h1>Admin import &amp; ontology maintenance</h1>
+                <p>Upload CSV data, inspect import batches and edit ontology-backed motorcycle records.</p>
+            </div>
+        </div>
+
+        <nav class="nav-links" aria-label="Admin navigation">
+            <a class="nav-pill" th:href="@{/admin/agent-logs}">📜 Agent logs</a>
+            <a class="nav-pill" th:href="@{/}">🔍 Back to search</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <span class="eyebrow">Operations dashboard</span>
+            <h2 class="hero-title">Control import and OWL data from one place.</h2>
+            <p class="hero-text">
+                This page combines the CSV import workflow, recent batch execution details, and quick manual edits
+                for price and availability in ontology-backed records.
+            </p>
+
+            <div class="actions" style="margin-top: 20px;">
+                <span class="pill">CSV → DB + OWL</span>
+                <span class="pill">Manual price updates</span>
+                <span class="pill">Availability sync</span>
+            </div>
+        </div>
+
+        <aside class="hero-card">
+            <h3>System snapshot</h3>
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <div class="stat-label">AgentBridge</div>
+                    <div class="stat-value" th:text="${agentBridgeReady} ? 'READY' : 'OFFLINE'"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Recent batches</div>
+                    <div class="stat-value" th:text="${batches != null ? #lists.size(batches) : 0}"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Ontology records</div>
+                    <div class="stat-value" th:text="${records != null ? #lists.size(records) : 0}"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Last result</div>
+                    <div class="stat-value" th:text="${importResult != null ? importResult.batchId : '-'}"></div>
+                </div>
+            </div>
+        </aside>
+    </section>
+
+    <div class="section-stack section-stack-spaced admin-main-flow">
+        <section class="panel">
+                <div class="panel-head">
+                    <div>
+                        <h3>Upload CSV</h3>
+                        <p class="section-subtitle">Import new records and optionally save the ontology file immediately.</p>
+                    </div>
+                    <span class="badge" th:classappend="${agentBridgeReady} ? ' badge-success' : ' badge-warning'"
+                          th:text="${agentBridgeReady} ? 'Bridge ready' : 'Bridge offline'"></span>
+                </div>
+
+                <form th:action="@{/admin/import}" method="post" enctype="multipart/form-data">
+                    <div class="form-grid">
+                        <div class="field span-2">
+                            <label for="csvFile">CSV file</label>
+                            <input id="csvFile" class="file-input" type="file" name="file" accept=".csv" required/>
+                            <span class="hint">UTF-8 CSV files are supported. It is best to upload a validated export.</span>
+                        </div>
+
+                        <div class="field span-2">
+                            <label class="check-row">
+                                <input type="checkbox" name="saveOntology" checked/>
+                                Save ontology file after import
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button class="btn btn-primary" type="submit">⬆️ Process CSV</button>
+                    </div>
+                </form>
+
+                <div th:if="${importNotices != null and !#lists.isEmpty(importNotices)}" style="margin-top: 18px;">
+                    <div th:each="n : ${importNotices}" class="message message-success auto-dismiss" th:text="${n}"></div>
+                </div>
+
+                <div th:if="${importResult != null}" style="margin-top: 18px;">
+                    <div class="message" th:classappend="${importResult.success} ? ' message-success' : ' message-error'"
+                         th:text="'Batch #' + ${importResult.batchId} + ' | total=' + ${importResult.totalRows} + ', upserted=' + ${importResult.importedRows} + ', skipped=' + ${importResult.skippedRows}"></div>
+
+                    <div class="stats-grid" style="margin-top: 14px;">
+                        <div class="tile"><span class="label">Total rows</span><span class="value" th:text="${importResult.totalRows}"></span></div>
+                        <div class="tile"><span class="label">Imported</span><span class="value" th:text="${importResult.importedRows}"></span></div>
+                        <div class="tile"><span class="label">Skipped</span><span class="value" th:text="${importResult.skippedRows}"></span></div>
+                        <div class="tile"><span class="label">Success</span><span class="value" th:text="${importResult.success} ? 'YES' : 'NO'"></span></div>
+                    </div>
+
+                    <div th:if="${importResult.errors != null and !#lists.isEmpty(importResult.errors)}" style="margin-top: 14px;">
+                        <div class="message message-error"><strong>Row validation issues</strong></div>
+                        <ul>
+                            <li th:each="e : ${importResult.errors}" th:text="${e}"></li>
+                        </ul>
+                    </div>
+                </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-head">
+                <div>
+                    <h3>Manual OWL edit</h3>
+                    <p class="section-subtitle">Update price and availability directly for the selected model.</p>
+                </div>
+                <span class="badge badge-dark">Price / availability</span>
+            </div>
+
+            <div th:if="${manualEditNotices != null and !#lists.isEmpty(manualEditNotices)}" style="margin-top: 0;">
+                <div th:each="n : ${manualEditNotices}" class="message message-success auto-dismiss" th:text="${n}"></div>
+            </div>
+
+            <div class="empty-state" th:if="${records == null or #lists.isEmpty(records)}">No ontology records found.</div>
+            <div class="table-wrap" th:if="${records != null and !#lists.isEmpty(records)}">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Model Code</th>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Category</th>
+                        <th>Price (EUR)</th>
+                        <th>Available</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="r : ${records}">
+                        <td><span class="badge badge-primary" th:text="${r.modelCode}"></span></td>
+                        <td th:text="${r.brand}"></td>
+                        <td>
+                            <div class="result-name">
+                                <strong th:text="${r.modelName}"></strong>
+                            </div>
+                        </td>
+                        <td th:text="${r.category}"></td>
+                        <td>
+                            <input type="number"
+                                   th:attr="form=${'edit-' + r.modelCode}"
+                                   name="priceEur"
+                                   min="0"
+                                   th:value="${r.priceEur}"
+                                   required/>
+                        </td>
+                        <td>
+                            <label class="check-row">
+                                <input type="checkbox"
+                                       th:attr="form=${'edit-' + r.modelCode}"
+                                       name="available"
+                                       th:checked="${r.available}"/>
+                                In stock
+                            </label>
+                        </td>
+                        <td>
+                            <form th:id="${'edit-' + r.modelCode}"
+                                  th:action="@{/admin/motorcycles/{code}/edit(code=${r.modelCode})}"
+                                  method="post">
+                                <button class="btn btn-secondary" type="submit">Save</button>
+                            </form>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-head">
+                <div>
+                    <h3>Recent import batches</h3>
+                    <p class="section-subtitle">Latest import process executions.</p>
+                </div>
+                <span class="badge badge-primary">Audit trail</span>
+            </div>
+
+            <div class="empty-state" th:if="${batches == null or #lists.isEmpty(batches)}">No import batches yet.</div>
+            <div class="table-wrap" th:if="${batches != null and !#lists.isEmpty(batches)}">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Source</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th>Imported</th>
+                        <th>Skipped</th>
+                        <th>Started</th>
+                        <th>Finished</th>
+                        <th>Error</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="b : ${batches}">
+                        <td th:text="${b.id}"></td>
+                        <td th:text="${b.sourcePath}"></td>
+                        <td>
+                            <span class="badge"
+                                  th:classappend="${b.status != null and b.status.toUpperCase().contains('SUCCESS')} ? ' badge-success' : (${b.status != null and b.status.toUpperCase().contains('FAIL')} ? ' badge-danger' : ' badge-warning')"
+                                  th:text="${b.status}"></span>
+                        </td>
+                        <td th:text="${b.totalRows}"></td>
+                        <td th:text="${b.importedRows}"></td>
+                        <td th:text="${b.skippedRows}"></td>
+                        <td th:text="${b.startedAt}"></td>
+                        <td th:text="${b.finishedAt}"></td>
+                        <td class="result-reason" th:text="${b.errorMessage}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script>
+    (() => {
+        const notices = document.querySelectorAll('.auto-dismiss');
+        if (notices.length === 0) {
+            return;
+        }
+
+        window.setTimeout(() => {
+            notices.forEach((el) => {
+                el.classList.add('fade-out');
+                window.setTimeout(() => el.remove(), 420);
+            });
+        }, 4500);
+    })();
+</script>
+
+</body>
+</html>

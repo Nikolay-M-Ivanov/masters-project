@@ -1,0 +1,64 @@
+# Project docs not intended for repo history
+HELP.md
+
+# Maven / Java build artifacts
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+out/
+*.class
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+
+# Environment / local secrets
+.env
+.env.*
+!.env.example
+
+# Local runtime database files
+moto-advisor.db
+*.sqlite
+*.sqlite3
+
+# STS / Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Planning/process docs (ignored by request)
+BACKLOG.md
+IMPLEMENTATION_STEP_NEXT_STAGE.md
+DECISIONS.md
+MVP_ACCEPTANCE.md
+MVP_SCOPE.md
+DOCUMENTATION.md

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Admin - Agent Logs</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}" href="/css/app.css"/>
+</head>
+<body>
+
+<div class="page-shell">
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-mark">📡</div>
+            <div class="brand-copy">
+                <h1>Agent communication logs</h1>
+                <p>Observe the latest interactions between application agents and conversation threads.</p>
+            </div>
+        </div>
+
+        <nav class="nav-links" aria-label="Logs navigation">
+            <a class="nav-pill" th:href="@{/admin/import}">🛠️ Back to admin import</a>
+            <a class="nav-pill" th:href="@{/}">🔍 Back to search</a>
+        </nav>
+    </header>
+
+    <section class="hero" style="grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.9fr);">
+        <div>
+            <span class="eyebrow">Traceability</span>
+            <h2 class="hero-title">Review agent traffic without losing context.</h2>
+            <p class="hero-text">
+                The table below shows the latest recorded messages, senders, receivers,
+                performative values, and conversation identifiers.
+            </p>
+        </div>
+
+        <aside class="hero-card">
+            <h3>Log overview</h3>
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <div class="stat-label">Loaded rows</div>
+                    <div class="stat-value" th:text="${logs != null ? #lists.size(logs) : 0}"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Window</div>
+                    <div class="stat-value">Top 100</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Source</div>
+                    <div class="stat-value stat-value-wrap stat-value-readable" title="AgentLogRepository">AgentLogRepository</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Use case</div>
+                    <div class="stat-value">Debug & audit</div>
+                </div>
+            </div>
+        </aside>
+    </section>
+
+    <section class="panel">
+        <div class="panel-head">
+            <div>
+                <h3>Latest log entries</h3>
+                <p class="section-subtitle">Useful for diagnosing communication flow and fallback scenarios.</p>
+            </div>
+            <span class="badge badge-primary">Realtime snapshot</span>
+        </div>
+
+        <div class="empty-state" th:if="${logs == null or #lists.isEmpty(logs)}">
+            No agent messages have been recorded yet. Run a search to generate logs.
+        </div>
+
+        <div class="table-wrap" th:if="${logs != null and !#lists.isEmpty(logs)}">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Sender</th>
+                    <th>Receiver</th>
+                    <th>Performative</th>
+                    <th>Summary</th>
+                    <th>Conversation</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="l : ${logs}">
+                    <td th:text="${l.createdAt}"></td>
+                    <td class="agent-col"><span class="badge badge-primary badge-agent" th:text="${l.sender}"></span></td>
+                    <td class="agent-col"><span class="badge badge-primary badge-agent" th:text="${l.receiver}"></span></td>
+                    <td><span class="badge badge-dark" th:text="${l.performative}"></span></td>
+                    <td class="result-reason" th:text="${l.content != null and #strings.length(l.content) > 90 ? #strings.substring(l.content,0,90) + '...' : l.content}"></td>
+                    <td th:text="${l.conversationId}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
