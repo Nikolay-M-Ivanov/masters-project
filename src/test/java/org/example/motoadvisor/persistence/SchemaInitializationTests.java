@@ -23,7 +23,6 @@ class SchemaInitializationTests {
     void requiredSchemaTablesExist() {
         assertEquals(1, tableExists("search_history"));
         assertEquals(1, tableExists("agent_logs"));
-        assertEquals(1, tableExists("import_batches"));
     }
 
     private Integer tableExists(String table) {

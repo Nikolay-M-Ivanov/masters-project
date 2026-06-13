@@ -17,7 +17,7 @@ import java.util.*;
  */
 @Service
 @RequiredArgsConstructor
-public class HomeSearchServiceStub implements HomeSearchService {
+public class HomeSearchServiceImpl implements HomeSearchService {
 
     private final AgentBridge agentBridge;
     private final RecommendationService recommendationService;

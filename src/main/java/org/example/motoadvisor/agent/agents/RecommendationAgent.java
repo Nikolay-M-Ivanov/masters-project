@@ -1,19 +1,14 @@
 package org.example.motoadvisor.agent.agents;
 
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 import lombok.extern.slf4j.Slf4j;
 import org.example.motoadvisor.agent.AclEnvelope;
+import org.example.motoadvisor.ontology.OntologyService;
+import org.example.motoadvisor.ontology.model.MotorcycleOntologyRecord;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 /**
@@ -27,13 +22,8 @@ import java.util.*;
 @Slf4j
 public class RecommendationAgent extends Agent {
 
-    private static final String CATALOG_PATH = "data/motorcycles.csv";
-    private List<Map<String, Object>> catalog = List.of();
-
     @Override
     protected void setup() {
-        catalog = loadCatalogRows();
-
         addBehaviour(new CyclicBehaviour() {
             @Override
             public void action() {
@@ -58,7 +48,7 @@ public class RecommendationAgent extends Agent {
 
                 try {
                     Map<String, Object> criteria = extractCriteria(req);
-                    List<Map<String, Object>> baseRows = catalog;
+                    List<Map<String, Object>> baseRows = loadCatalogRows();
                     List<Map<String, Object>> scored = scoreAndRank(criteria, baseRows);
 
                     Map<String, Object> payload = new HashMap<>();
@@ -165,49 +155,32 @@ public class RecommendationAgent extends Agent {
     }
 
     private List<Map<String, Object>> loadCatalogRows() {
-        try (InputStream is = getClass().getClassLoader().getResourceAsStream(CATALOG_PATH)) {
-            if (is == null) {
-                log.warn("[JADE] Catalog '{}' not found. Using empty recommendation catalog.", CATALOG_PATH);
-                return List.of();
-            }
+        OntologyService ontologyService = OntologyService.getInstance();
+        if (ontologyService == null) {
+            log.warn("[JADE] OntologyService is not ready. Using empty recommendation catalog.");
+            return List.of();
+        }
 
-            try (Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8);
-                 CSVParser parser = CSVFormat.DEFAULT.builder()
-                         .setHeader()
-                         .setSkipHeaderRecord(true)
-                         .setTrim(true)
-                         .setIgnoreEmptyLines(true)
-                         .build()
-                         .parse(reader)) {
-
-                List<Map<String, Object>> rows = new ArrayList<>();
-                for (CSVRecord r : parser) {
-                    rows.add(row(
-                            r.get("brand"),
-                            r.get("name"),
-                            r.get("category"),
-                            toInt(r.get("engineSizeCc")),
-                            toInt(r.get("priceEur")),
-                            r.get("experienceLevel")
-                    ));
-                }
-                log.info("[JADE] Recommendation catalog loaded: {} rows", rows.size());
-                return rows;
-            }
+        try {
+            List<Map<String, Object>> rows = ontologyService.findAvailableMotorcycles().stream()
+                    .map(this::row)
+                    .toList();
+            log.info("[JADE] Ontology recommendation catalog loaded: {} rows", rows.size());
+            return rows;
         } catch (Exception e) {
-            log.error("[JADE] Failed to load recommendation catalog '{}': {}", CATALOG_PATH, e.getMessage());
+            log.error("[JADE] Failed to load ontology recommendation catalog: {}", e.getMessage(), e);
             return List.of();
         }
     }
 
-    private Map<String, Object> row(String brand, String model, String category, int engine, int price, String level) {
+    private Map<String, Object> row(MotorcycleOntologyRecord record) {
         Map<String, Object> m = new LinkedHashMap<>();
-        m.put("brand", brand);
-        m.put("modelName", model);
-        m.put("category", category);
-        m.put("engineSizeCc", engine);
-        m.put("priceEur", price);
-        m.put("experienceLevel", level);
+        m.put("brand", record.brand());
+        m.put("modelName", record.modelName());
+        m.put("category", record.category());
+        m.put("engineSizeCc", record.engineSizeCc());
+        m.put("priceEur", record.priceEur());
+        m.put("experienceLevel", record.experienceLevel());
         return m;
     }
 

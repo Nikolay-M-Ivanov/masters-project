@@ -32,7 +32,7 @@ class FrontendRenderingSmokeTests {
         mockMvc.perform(get("/admin/import"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("Operations dashboard")))
-                .andExpect(content().string(org.hamcrest.Matchers.containsString("Upload CSV")));
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("Manual OWL edit")));
 
         mockMvc.perform(get("/admin/agent-logs"))
                 .andExpect(status().isOk())

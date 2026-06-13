@@ -30,6 +30,8 @@ import java.util.*;
 @Service
 public class OntologyService {
 
+    private static volatile OntologyService INSTANCE;
+
     private static final String BASE = "http://example.org/moto-advisor#";
 
     private static final String CLASS_MOTORCYCLE = "Motorcycle";
@@ -54,6 +56,7 @@ public class OntologyService {
 
     @PostConstruct
     public void init() {
+        INSTANCE = this;
         manager = OWLManager.createOWLOntologyManager();
         df = manager.getOWLDataFactory();
 
@@ -106,6 +109,13 @@ public class OntologyService {
         });
         rows.sort(Comparator.comparing(MotorcycleOntologyRecord::modelCode, String.CASE_INSENSITIVE_ORDER));
         return rows;
+    }
+
+    /** Returns only ontology records currently marked as available. */
+    public List<MotorcycleOntologyRecord> findAvailableMotorcycles() {
+        return findAllMotorcycles().stream()
+                .filter(MotorcycleOntologyRecord::available)
+                .toList();
     }
 
     /** Find one motorcycle record by model code (case-insensitive). */
@@ -163,6 +173,11 @@ public class OntologyService {
     /** Returns loaded ontology instance. */
     public OWLOntology getOntology() {
         return ontology;
+    }
+
+    /** Static accessor used by JADE agents that are not Spring-managed beans. */
+    public static OntologyService getInstance() {
+        return INSTANCE;
     }
 
     /** Returns ontology manager. */

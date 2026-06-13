@@ -11,11 +11,11 @@ import jade.wrapper.StaleProxyException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.motoadvisor.agent.agents.RecommendationAgent;
-import org.example.motoadvisor.agent.agents.SpecAgent;
 import org.example.motoadvisor.agent.agents.UserRequestAgent;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.net.ServerSocket;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -45,6 +45,7 @@ public class JadeManager {
 
     private Runtime runtime;
     private AgentContainer mainContainer;
+    private int boundPort;
 
     @PostConstruct
     public void start() {
@@ -55,8 +56,9 @@ public class JadeManager {
 
         try {
             runtime = Runtime.instance();
+            boundPort = resolveAvailablePort(port);
 
-            ProfileImpl profile = new ProfileImpl(host, port, platformId);
+            ProfileImpl profile = new ProfileImpl(host, boundPort, platformId);
             profile.setParameter(Profile.MAIN, "true");
             profile.setParameter(Profile.GUI, "false");
 
@@ -64,11 +66,10 @@ public class JadeManager {
 
             register(AgentNames.USER_REQUEST_AGENT, UserRequestAgent.class, new Object[]{});
             register(AgentNames.RECOMMENDATION_AGENT, RecommendationAgent.class, new Object[]{});
-            register(AgentNames.SPEC_AGENT, SpecAgent.class, new Object[]{});
 
             started.set(true);
             log.info("[JADE] Started platform='{}' host='{}' port={} with {} agents",
-                    platformId, host, port, agents.size());
+                    platformId, host, boundPort, agents.size());
         } catch (Exception e) {
             log.error("[JADE] Failed to start container: {}", e.getMessage(), e);
             started.set(false);
@@ -125,5 +126,19 @@ public class JadeManager {
         controller.start();
         agents.put(name, controller);
         log.info("[JADE] Registered agent '{}' as {}", name, clazz.getSimpleName());
+    }
+
+    private int resolveAvailablePort(int preferredPort) {
+        try (ServerSocket ignored = new ServerSocket(preferredPort)) {
+            return preferredPort;
+        } catch (Exception e) {
+            try (ServerSocket fallback = new ServerSocket(0)) {
+                int freePort = fallback.getLocalPort();
+                log.warn("[JADE] Port {} is busy. Falling back to free port {}.", preferredPort, freePort);
+                return freePort;
+            } catch (Exception inner) {
+                throw new IllegalStateException("Cannot allocate JADE port", inner);
+            }
+        }
     }
 }

@@ -31,7 +31,6 @@
         <owlapi.version>5.5.1</owlapi.version>
         <jade.version>4.6.0</jade.version>
         <sqlite.version>3.45.1.0</sqlite.version>
-        <commons-csv.version>1.10.0</commons-csv.version>
     </properties>
 
     <!-- ===================================================================
@@ -63,9 +62,8 @@
            3. JPA + SQLite
            4. OWL API
            5. JADE
-           6. Commons CSV
-           7. Dev utilities (DevTools, Lombok)
-           8. Tests
+           6. Dev utilities (DevTools, Lombok)
+           7. Tests
          =================================================================== -->
     <dependencies>
 
@@ -127,17 +125,7 @@
             <version>${jade.version}</version>
         </dependency>
 
-        <!-- ── 6. Commons CSV ─────────────────────────────────────────── -->
-        <!--
-            Used by CsvImportService to parse the seed motorcycle dataset.
-        -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-csv</artifactId>
-            <version>${commons-csv.version}</version>
-        </dependency>
-
-        <!-- ── 7. Dev utilities ───────────────────────────────────────── -->
+        <!-- ── 6. Dev utilities ───────────────────────────────────────── -->
         <!-- Compile-time code generation (@Getter, @Builder, @Slf4j, …) -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -145,7 +133,7 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- ── 8. Tests ───────────────────────────────────────────────── -->
+        <!-- ── 7. Tests ───────────────────────────────────────────────── -->
         <!--
             spring-boot-starter-test includes:
               JUnit 5, Mockito, AssertJ, MockMvc, Spring Test context support

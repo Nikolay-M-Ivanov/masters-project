@@ -5,7 +5,7 @@ import lombok.*;
 
 /**
  * Represents a motorcycle in the reference catalogue.
- * Seed data is loaded via CSV import at startup (see CsvImportService).
+ * Retained as an auxiliary persistence model, while the active search catalog is stored in OWL.
  */
 @Entity
 @Table(name = "motorcycles")

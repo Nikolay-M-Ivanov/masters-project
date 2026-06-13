@@ -1,81 +1,2743 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://example.org/moto-advisor#"
      xml:base="http://example.org/moto-advisor"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-
     <owl:Ontology rdf:about="http://example.org/moto-advisor"/>
+    
 
-    <!-- Classes -->
-    <owl:Class rdf:about="http://example.org/moto-advisor#Motorcycle"/>
-    <owl:Class rdf:about="http://example.org/moto-advisor#SportBike">
-        <rdfs:subClassOf rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
-    </owl:Class>
-    <owl:Class rdf:about="http://example.org/moto-advisor#NakedBike">
-        <rdfs:subClassOf rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
-    </owl:Class>
-    <owl:Class rdf:about="http://example.org/moto-advisor#TouringBike">
-        <rdfs:subClassOf rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
-    </owl:Class>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.org/moto-advisor#available -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#available"/>
+    
+
+
+    <!-- http://example.org/moto-advisor#engineSizeCc -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#engineSizeCc"/>
+    
+
+
+    <!-- http://example.org/moto-advisor#experienceLevel -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#experienceLevel"/>
+    
+
+
+    <!-- http://example.org/moto-advisor#hasBrand -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#hasBrand"/>
+    
+
+
+    <!-- http://example.org/moto-advisor#hasCategory -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#hasCategory"/>
+    
+
+
+    <!-- http://example.org/moto-advisor#hasModelCode -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#hasModelCode"/>
+    
+
+
+    <!-- http://example.org/moto-advisor#hasModelName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#hasModelName"/>
+    
+
+
+    <!-- http://example.org/moto-advisor#priceEur -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#priceEur"/>
+    
+
+
+    <!-- http://example.org/moto-advisor#seatHeightMm -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#seatHeightMm"/>
+    
+
+
+    <!-- http://example.org/moto-advisor#weightKg -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#weightKg"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.org/moto-advisor#AdventureBike -->
+
+
     <owl:Class rdf:about="http://example.org/moto-advisor#AdventureBike">
         <rdfs:subClassOf rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
     </owl:Class>
-    <owl:Class rdf:about="http://example.org/moto-advisor#CruiserBike">
-        <rdfs:subClassOf rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
-    </owl:Class>
+    
+
+
+    <!-- http://example.org/moto-advisor#CommuterBike -->
+
+
     <owl:Class rdf:about="http://example.org/moto-advisor#CommuterBike">
         <rdfs:subClassOf rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
     </owl:Class>
+    
 
-    <!-- Datatype properties -->
-    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#hasModelCode"/>
-    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#hasBrand"/>
-    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#hasModelName"/>
-    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#hasCategory"/>
-    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#engineSizeCc"/>
-    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#priceEur"/>
-    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#seatHeightMm"/>
-    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#weightKg"/>
-    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#experienceLevel"/>
-    <owl:DatatypeProperty rdf:about="http://example.org/moto-advisor#available"/>
 
-    <!-- Seed dataset (20 motorcycles) -->
+    <!-- http://example.org/moto-advisor#CruiserBike -->
+
+
+    <owl:Class rdf:about="http://example.org/moto-advisor#CruiserBike">
+        <rdfs:subClassOf rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/moto-advisor#Motorcycle -->
+
+
+    <owl:Class rdf:about="http://example.org/moto-advisor#Motorcycle"/>
+    
+
+
+    <!-- http://example.org/moto-advisor#NakedBike -->
+
+
+    <owl:Class rdf:about="http://example.org/moto-advisor#NakedBike">
+        <rdfs:subClassOf rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/moto-advisor#SportBike -->
+
+
+    <owl:Class rdf:about="http://example.org/moto-advisor#SportBike">
+        <rdfs:subClassOf rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/moto-advisor#TouringBike -->
+
+
+    <owl:Class rdf:about="http://example.org/moto-advisor#TouringBike">
+        <rdfs:subClassOf rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.org/moto-advisor#AFRICATWIN -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#AFRICATWIN">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1084</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Honda</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>AFRICATWIN</hasModelCode>
+        <hasModelName>Africa Twin</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">850</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">226</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#BOLTRSPEC -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#BOLTRSPEC">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">942</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Yamaha</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>BOLTRSPEC</hasModelCode>
+        <hasModelName>Bolt R-Spec</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9900</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">690</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">252</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#BONNEVILLET120 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#BONNEVILLET120">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1200</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Triumph</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>BONNEVILLET120</hasModelCode>
+        <hasModelName>Bonneville T120</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">13200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">790</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">236</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#BOULEVARDM109R -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#BOULEVARDM109R">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1783</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Suzuki</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>BOULEVARDM109R</hasModelCode>
+        <hasModelName>Boulevard M109R</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">18200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">705</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">347</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#BURGMAN400 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#BURGMAN400">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CommuterBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">400</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Suzuki</hasBrand>
+        <hasCategory>COMMUTER</hasCategory>
+        <hasModelCode>BURGMAN400</hasModelCode>
+        <hasModelName>Burgman 400</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7300</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">755</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">218</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#CALIFORNIA1400 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#CALIFORNIA1400">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1380</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Moto Guzzi</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>CALIFORNIA1400</hasModelCode>
+        <hasModelName>California 1400</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">19500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">740</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">337</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#CB1000HORNET -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#CB1000HORNET">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1000</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Honda</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>CB1000HORNET</hasModelCode>
+        <hasModelName>CB1000 Hornet</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">809</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">211</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#CB500F -->
+
+
     <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#CB500F">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
         <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
-        <hasModelCode>CB500F</hasModelCode><hasBrand>Honda</hasBrand><hasModelName>CB500F</hasModelName><hasCategory>NAKED</hasCategory>
-        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">471</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6700</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">790</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">189</weightKg><experienceLevel>BEGINNER</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">471</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Honda</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>CB500F</hasModelCode>
+        <hasModelName>CB500F</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6700</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">790</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">189</weightKg>
     </owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#CB650R">
-        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
-        <hasModelCode>CB650R</hasModelCode><hasBrand>Honda</hasBrand><hasModelName>CB650R</hasModelName><hasCategory>NAKED</hasCategory>
-        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">649</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8500</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">810</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">202</weightKg><experienceLevel>INTERMEDIATE</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
-    </owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#CBR1000RRR">
-        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
-        <hasModelCode>CBR1000RRR</hasModelCode><hasBrand>Honda</hasBrand><hasModelName>CBR1000RR-R</hasModelName><hasCategory>SPORT</hasCategory>
-        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1000</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">28000</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">830</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">201</weightKg><experienceLevel>ADVANCED</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
-    </owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#MT03"><rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/><hasModelCode>MT03</hasModelCode><hasBrand>Yamaha</hasBrand><hasModelName>MT-03</hasModelName><hasCategory>NAKED</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">321</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5500</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">780</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">167</weightKg><experienceLevel>BEGINNER</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#MT07"><rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/><hasModelCode>MT07</hasModelCode><hasBrand>Yamaha</hasBrand><hasModelName>MT-07</hasModelName><hasCategory>NAKED</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">689</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8000</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">805</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">184</weightKg><experienceLevel>INTERMEDIATE</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#YZFR1"><rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/><hasModelCode>YZFR1</hasModelCode><hasBrand>Yamaha</hasBrand><hasModelName>YZF-R1</hasModelName><hasCategory>SPORT</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">998</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">21000</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">855</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">199</weightKg><experienceLevel>ADVANCED</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#NINJA400"><rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/><hasModelCode>NINJA400</hasModelCode><hasBrand>Kawasaki</hasBrand><hasModelName>Ninja 400</hasModelName><hasCategory>SPORT</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">399</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5800</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">785</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">168</weightKg><experienceLevel>BEGINNER</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#Z650"><rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/><hasModelCode>Z650</hasModelCode><hasBrand>Kawasaki</hasBrand><hasModelName>Z650</hasModelName><hasCategory>NAKED</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">649</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7500</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">790</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">187</weightKg><experienceLevel>INTERMEDIATE</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#ZX10R"><rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/><hasModelCode>ZX10R</hasModelCode><hasBrand>Kawasaki</hasBrand><hasModelName>ZX-10R</hasModelName><hasCategory>SPORT</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">998</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">18000</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">830</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">207</weightKg><experienceLevel>ADVANCED</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#F900R"><rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/><hasModelCode>F900R</hasModelCode><hasBrand>BMW</hasBrand><hasModelName>F 900 R</hasModelName><hasCategory>NAKED</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">895</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10500</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">815</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">211</weightKg><experienceLevel>INTERMEDIATE</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#R1250GS"><rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/><hasModelCode>R1250GS</hasModelCode><hasBrand>BMW</hasBrand><hasModelName>R 1250 GS</hasModelName><hasCategory>ADVENTURE</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1254</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">18500</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">850</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">249</weightKg><experienceLevel>ADVANCED</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#MONSTER937"><rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/><hasModelCode>MONSTER937</hasModelCode><hasBrand>Ducati</hasBrand><hasModelName>Monster 937</hasModelName><hasCategory>NAKED</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">937</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">14000</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">820</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">188</weightKg><experienceLevel>INTERMEDIATE</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#DUKE390"><rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/><hasModelCode>DUKE390</hasModelCode><hasBrand>KTM</hasBrand><hasModelName>Duke 390</hasModelName><hasCategory>NAKED</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">373</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5500</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">830</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">149</weightKg><experienceLevel>BEGINNER</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#ADV890"><rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/><hasModelCode>ADV890</hasModelCode><hasBrand>KTM</hasBrand><hasModelName>Adventure 890</hasModelName><hasCategory>ADVENTURE</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">889</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">13500</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">860</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">189</weightKg><experienceLevel>INTERMEDIATE</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#SV650"><rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/><hasModelCode>SV650</hasModelCode><hasBrand>Suzuki</hasBrand><hasModelName>SV650</hasModelName><hasCategory>NAKED</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">645</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7000</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">785</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">197</weightKg><experienceLevel>BEGINNER</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#STREETTRIPLER"><rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/><hasModelCode>STREETTRIPLER</hasModelCode><hasBrand>Triumph</hasBrand><hasModelName>Street Triple R</hasModelName><hasCategory>NAKED</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">765</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12000</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">825</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">166</weightKg><experienceLevel>INTERMEDIATE</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#METEOR350"><rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/><hasModelCode>METEOR350</hasModelCode><hasBrand>RoyalEnfield</hasBrand><hasModelName>Meteor 350</hasModelName><hasCategory>CRUISER</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">349</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4200</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">765</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">191</weightKg><experienceLevel>BEGINNER</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#AFRICATWIN"><rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/><hasModelCode>AFRICATWIN</hasModelCode><hasBrand>Honda</hasBrand><hasModelName>Africa Twin</hasModelName><hasCategory>ADVENTURE</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1084</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15000</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">850</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">226</weightKg><experienceLevel>INTERMEDIATE</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#TRACER9"><rdf:type rdf:resource="http://example.org/moto-advisor#TouringBike"/><hasModelCode>TRACER9</hasModelCode><hasBrand>Yamaha</hasBrand><hasModelName>Tracer 9</hasModelName><hasCategory>TOURING</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">890</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">13000</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">820</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">204</weightKg><experienceLevel>INTERMEDIATE</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#S1000RR"><rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/><hasModelCode>S1000RR</hasModelCode><hasBrand>BMW</hasBrand><hasModelName>S 1000 RR</hasModelName><hasCategory>SPORT</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">999</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22000</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">824</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">197</weightKg><experienceLevel>ADVANCED</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
-    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#REBEL500"><rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/><hasModelCode>REBEL500</hasModelCode><hasBrand>Honda</hasBrand><hasModelName>Rebel 500</hasModelName><hasCategory>CRUISER</hasCategory><engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">471</engineSizeCc><priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7200</priceEur><seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">690</seatHeightMm><weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">191</weightKg><experienceLevel>BEGINNER</experienceLevel><available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available></owl:NamedIndividual>
+    
 
+
+    <!-- http://example.org/moto-advisor#CB650R -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#CB650R">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">649</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Honda</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>CB650R</hasModelCode>
+        <hasModelName>CB650R</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">810</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">202</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#CB750HORNET -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#CB750HORNET">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">755</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Honda</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>CB750HORNET</hasModelCode>
+        <hasModelName>CB750 Hornet</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9300</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">795</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">190</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#CBR1000RRR -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#CBR1000RRR">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1000</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Honda</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>CBR1000RRR</hasModelCode>
+        <hasModelName>CBR1000RR-R</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">830</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">201</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#CBR650R -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#CBR650R">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">649</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Honda</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>CBR650R</hasModelCode>
+        <hasModelName>CBR650R</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9900</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">810</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">208</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#CHALLENGER -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#CHALLENGER">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#TouringBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1768</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Indian</hasBrand>
+        <hasCategory>TOURING</hasCategory>
+        <hasModelCode>CHALLENGER</hasModelCode>
+        <hasModelName>Challenger</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">32000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">672</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">381</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#CHIEFDARKHORSE -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#CHIEFDARKHORSE">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1890</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Indian</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>CHIEFDARKHORSE</hasModelCode>
+        <hasModelName>Chief Dark Horse</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">24000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">662</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">304</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#CITY350 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#CITY350">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CommuterBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">350</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Indian</hasBrand>
+        <hasCategory>COMMUTER</hasCategory>
+        <hasModelCode>CITY350</hasModelCode>
+        <hasModelName>City 350</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4900</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">780</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">179</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#CLASSIC350 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#CLASSIC350">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">349</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Royal Enfield</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>CLASSIC350</hasModelCode>
+        <hasModelName>Classic 350</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4600</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">805</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">195</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#CMX1100REBEL -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#CMX1100REBEL">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1084</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Honda</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>CMX1100REBEL</hasModelCode>
+        <hasModelName>CMX1100 Rebel</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">11200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">700</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">223</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#CONTINENTALGT650 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#CONTINENTALGT650">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">648</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Royal Enfield</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>CONTINENTALGT650</hasModelCode>
+        <hasModelName>Continental GT 650</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">804</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">211</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#DAYTONA660 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#DAYTONA660">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">660</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Triumph</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>DAYTONA660</hasModelCode>
+        <hasModelName>Daytona 660</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">810</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">201</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#DIAVELV4 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#DIAVELV4">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1158</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Ducati</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>DIAVELV4</hasModelCode>
+        <hasModelName>Diavel V4</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">27500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">790</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">236</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#DUKE390 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#DUKE390">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">373</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>KTM</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>DUKE390</hasModelCode>
+        <hasModelName>Duke 390</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">830</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">149</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#ELIMINATOR500 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#ELIMINATOR500">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">451</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Kawasaki</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>ELIMINATOR500</hasModelCode>
+        <hasModelName>Eliminator 500</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7100</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">735</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">176</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#F800GS -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#F800GS">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">895</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>BMW</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>F800GS</hasModelCode>
+        <hasModelName>F 800 GS</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">860</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">227</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#F900R -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#F900R">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">895</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>BMW</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>F900R</hasModelCode>
+        <hasModelName>F 900 R</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">815</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">211</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#F900XR -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#F900XR">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#TouringBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">895</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>BMW</hasBrand>
+        <hasCategory>TOURING</hasCategory>
+        <hasModelCode>F900XR</hasModelCode>
+        <hasModelName>F 900 XR</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">825</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">219</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#FORZA350 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#FORZA350">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CommuterBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">330</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Honda</hasBrand>
+        <hasCategory>COMMUTER</hasCategory>
+        <hasModelCode>FORZA350</hasModelCode>
+        <hasModelName>Forza 350</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">780</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">184</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#FTRSPORT -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#FTRSPORT">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1203</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Indian</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>FTRSPORT</hasModelCode>
+        <hasModelName>FTR Sport</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">17800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">805</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">233</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#G310GS -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#G310GS">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">313</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>BMW</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>G310GS</hasModelCode>
+        <hasModelName>G 310 GS</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">835</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">169</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#G310R -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#G310R">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">313</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>BMW</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>G310R</hasModelCode>
+        <hasModelName>G 310 R</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5600</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">785</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">158</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#GSX250R -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#GSX250R">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">248</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Suzuki</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>GSX250R</hasModelCode>
+        <hasModelName>GSX-250R</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4900</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">790</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">181</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#GSX8R -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#GSX8R">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">776</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Suzuki</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>GSX8R</hasModelCode>
+        <hasModelName>GSX-8R</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9600</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">810</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">205</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#GSX8S -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#GSX8S">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">776</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Suzuki</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>GSX8S</hasModelCode>
+        <hasModelName>GSX-8S</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8700</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">810</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">202</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#GSXS1000GT -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#GSXS1000GT">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#TouringBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">999</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Suzuki</hasBrand>
+        <hasCategory>TOURING</hasCategory>
+        <hasModelCode>GSXS1000GT</hasModelCode>
+        <hasModelName>GSX-S1000GT</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">810</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">226</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#HAYABUSA -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#HAYABUSA">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1340</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Suzuki</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>HAYABUSA</hasModelCode>
+        <hasModelName>Hayabusa</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">19500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">800</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">264</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#HIMALAYAN450 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#HIMALAYAN450">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">452</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Royal Enfield</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>HIMALAYAN450</hasModelCode>
+        <hasModelName>Himalayan 450</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">825</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">196</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#HUNTER350 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#HUNTER350">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CommuterBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">349</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Royal Enfield</hasBrand>
+        <hasCategory>COMMUTER</hasCategory>
+        <hasModelCode>HUNTER350</hasModelCode>
+        <hasModelName>Hunter 350</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4300</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">790</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">181</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#INDIAN_ADVENTURE890 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#INDIAN_ADVENTURE890">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">889</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Indian</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>INDIAN_ADVENTURE890</hasModelCode>
+        <hasModelName>Adventure 890</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">14500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">860</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">218</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#INTERCEPTOR650 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#INTERCEPTOR650">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">648</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Royal Enfield</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>INTERCEPTOR650</hasModelCode>
+        <hasModelName>Interceptor 650</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">804</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">218</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#KLR650 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#KLR650">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">652</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Kawasaki</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>KLR650</hasModelCode>
+        <hasModelName>KLR650</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7600</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">870</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">208</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#KTM_ADVENTURE890 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#KTM_ADVENTURE890">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">889</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>KTM</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>KTM_ADVENTURE890</hasModelCode>
+        <hasModelName>Adventure 890</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">13500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">860</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">189</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#LEMANS850 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#LEMANS850">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">850</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Moto Guzzi</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>LEMANS850</hasModelCode>
+        <hasModelName>Le Mans 850</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">810</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">217</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#LOWRIDERS -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#LOWRIDERS">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1923</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Harley-Davidson</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>LOWRIDERS</hasModelCode>
+        <hasModelName>Low Rider S</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">23000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">710</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">308</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#M1000R -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#M1000R">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">999</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>BMW</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>M1000R</hasModelCode>
+        <hasModelName>M 1000 R</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">830</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">199</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#METEOR350 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#METEOR350">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">349</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Royal Enfield</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>METEOR350</hasModelCode>
+        <hasModelName>Meteor 350</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">765</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">191</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#MONSTER -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#MONSTER">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">937</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Ducati</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>MONSTER</hasModelCode>
+        <hasModelName>Monster</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">820</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">188</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#MONSTER937 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#MONSTER937">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">937</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Ducati</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>MONSTER937</hasModelCode>
+        <hasModelName>Monster 937</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">14000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">820</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">188</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#MT03 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#MT03">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">321</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Yamaha</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>MT03</hasModelCode>
+        <hasModelName>MT-03</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">780</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">167</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#MT07 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#MT07">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">689</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Yamaha</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>MT07</hasModelCode>
+        <hasModelName>MT-07</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">805</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">184</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#MULTISTRADAV2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#MULTISTRADAV2">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#TouringBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">937</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Ducati</hasBrand>
+        <hasCategory>TOURING</hasCategory>
+        <hasModelCode>MULTISTRADAV2</hasModelCode>
+        <hasModelName>Multistrada V2</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">17200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">830</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">222</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#MULTISTRADAV4 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#MULTISTRADAV4">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1158</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Ducati</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>MULTISTRADAV4</hasModelCode>
+        <hasModelName>Multistrada V4</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">23500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">840</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">243</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#NIGHTSTER -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#NIGHTSTER">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">975</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Harley-Davidson</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>NIGHTSTER</hasModelCode>
+        <hasModelName>Nightster</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">16800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">705</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">221</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#NIKENGT -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#NIKENGT">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#TouringBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">890</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Yamaha</hasBrand>
+        <hasCategory>TOURING</hasCategory>
+        <hasModelCode>NIKENGT</hasModelCode>
+        <hasModelName>Niken GT</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">18500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">825</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">270</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#NINJA400 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#NINJA400">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">399</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Kawasaki</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>NINJA400</hasModelCode>
+        <hasModelName>Ninja 400</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">785</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">168</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#NINJA650 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#NINJA650">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">649</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Kawasaki</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>NINJA650</hasModelCode>
+        <hasModelName>Ninja 650</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">790</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">193</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#NINJAZX4RR -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#NINJAZX4RR">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">399</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Kawasaki</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>NINJAZX4RR</hasModelCode>
+        <hasModelName>Ninja ZX-4RR</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10400</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">800</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">189</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#NINJAZX6R -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#NINJAZX6R">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">636</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Kawasaki</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>NINJAZX6R</hasModelCode>
+        <hasModelName>Ninja ZX-6R</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">13200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">830</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">198</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#NT1100 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#NT1100">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#TouringBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1084</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Honda</hasBrand>
+        <hasCategory>TOURING</hasCategory>
+        <hasModelCode>NT1100</hasModelCode>
+        <hasModelName>NT1100</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">14500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">820</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">238</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#PANAMERICA1250 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#PANAMERICA1250">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1252</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Harley-Davidson</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>PANAMERICA1250</hasModelCode>
+        <hasModelName>Pan America 1250</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">875</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">258</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#PANIGALEV2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#PANIGALEV2">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">955</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Ducati</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>PANIGALEV2</hasModelCode>
+        <hasModelName>Panigale V2</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">18500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">840</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">200</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#PANIGALEV4 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#PANIGALEV4">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1103</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Ducati</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>PANIGALEV4</hasModelCode>
+        <hasModelName>Panigale V4</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">26500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">850</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">198</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#PCX125 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#PCX125">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CommuterBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">125</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Honda</hasBrand>
+        <hasCategory>COMMUTER</hasCategory>
+        <hasModelCode>PCX125</hasModelCode>
+        <hasModelName>PCX125</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">764</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">131</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#R12 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#R12">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1170</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>BMW</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>R12</hasModelCode>
+        <hasModelName>R 12</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">16000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">754</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">227</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#R1250GS -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#R1250GS">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1254</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>BMW</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>R1250GS</hasModelCode>
+        <hasModelName>R 1250 GS</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">18500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">850</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">249</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#R18 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#R18">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1802</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>BMW</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>R18</hasModelCode>
+        <hasModelName>R 18</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">23500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">690</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">345</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#R3 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#R3">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">321</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Yamaha</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>R3</hasModelCode>
+        <hasModelName>R3</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6400</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">780</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">169</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#R7 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#R7">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">689</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Yamaha</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>R7</hasModelCode>
+        <hasModelName>R7</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10100</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">835</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">188</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#RC390 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#RC390">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">373</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>KTM</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>RC390</hasModelCode>
+        <hasModelName>RC 390</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">824</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">172</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#REBEL500 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#REBEL500">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">471</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Honda</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>REBEL500</hasModelCode>
+        <hasModelName>Rebel 500</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">690</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">191</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#ROADGLIDE -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#ROADGLIDE">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#TouringBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1868</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Harley-Davidson</hasBrand>
+        <hasCategory>TOURING</hasCategory>
+        <hasModelCode>ROADGLIDE</hasModelCode>
+        <hasModelName>Road Glide</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">32000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">690</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">380</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#S1000RR -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#S1000RR">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">999</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>BMW</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>S1000RR</hasModelCode>
+        <hasModelName>S 1000 RR</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">824</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">197</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#S1000XR -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#S1000XR">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#TouringBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">999</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>BMW</hasBrand>
+        <hasCategory>TOURING</hasCategory>
+        <hasModelCode>S1000XR</hasModelCode>
+        <hasModelName>S 1000 XR</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">19400</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">850</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">227</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#SCOOTER200 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#SCOOTER200">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CommuterBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">200</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Moto Guzzi</hasBrand>
+        <hasCategory>COMMUTER</hasCategory>
+        <hasModelCode>SCOOTER200</hasModelCode>
+        <hasModelName>Scooter 200</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4100</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">780</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">152</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#SCOUTBOBBER -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#SCOUTBOBBER">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1133</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Indian</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>SCOUTBOBBER</hasModelCode>
+        <hasModelName>Scout Bobber</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">14800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">649</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">252</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#SCOUTSIXTY -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#SCOUTSIXTY">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">999</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Indian</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>SCOUTSIXTY</hasModelCode>
+        <hasModelName>Scout Sixty</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">13500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">649</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">244</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#SCRAM411 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#SCRAM411">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">411</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Royal Enfield</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>SCRAM411</hasModelCode>
+        <hasModelName>Scram 411</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5600</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">795</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">185</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#SCRAMBLERICON -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#SCRAMBLERICON">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">803</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Ducati</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>SCRAMBLERICON</hasModelCode>
+        <hasModelName>Scrambler Icon</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">798</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">185</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#SHOTGUN650 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#SHOTGUN650">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">648</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Royal Enfield</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>SHOTGUN650</hasModelCode>
+        <hasModelName>Shotgun 650</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8400</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">795</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">240</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#SPEED400 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#SPEED400">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CommuterBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">398</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Triumph</hasBrand>
+        <hasCategory>COMMUTER</hasCategory>
+        <hasModelCode>SPEED400</hasModelCode>
+        <hasModelName>Speed 400</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">790</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">170</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#SPEEDTWIN900 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#SPEEDTWIN900">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">900</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Triumph</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>SPEEDTWIN900</hasModelCode>
+        <hasModelName>Speed Twin 900</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9900</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">765</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">216</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#SPIRIT650 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#SPIRIT650">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#TouringBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">648</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Indian</hasBrand>
+        <hasCategory>TOURING</hasCategory>
+        <hasModelCode>SPIRIT650</hasModelCode>
+        <hasModelName>Spirit 650</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">810</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">214</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#SPORTSTERS -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#SPORTSTERS">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1252</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Harley-Davidson</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>SPORTSTERS</hasModelCode>
+        <hasModelName>Sportster S</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">19500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">765</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">228</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#STELVIO -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#STELVIO">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1042</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Moto Guzzi</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>STELVIO</hasModelCode>
+        <hasModelName>Stelvio</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">16800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">830</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">246</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#STREET500 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#STREET500">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CommuterBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">494</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Harley-Davidson</hasBrand>
+        <hasCategory>COMMUTER</hasCategory>
+        <hasModelCode>STREET500</hasModelCode>
+        <hasModelName>Street 500</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">709</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">233</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#STREETBOB114 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#STREETBOB114">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1868</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Harley-Davidson</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>STREETBOB114</hasModelCode>
+        <hasModelName>Street Bob 114</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">21000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">680</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">297</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#STREETFIGHTERV2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#STREETFIGHTERV2">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">955</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Ducati</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>STREETFIGHTERV2</hasModelCode>
+        <hasModelName>Streetfighter V2</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">16200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">845</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">200</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#STREETROD750 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#STREETROD750">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">749</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Harley-Davidson</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>STREETROD750</hasModelCode>
+        <hasModelName>Street Rod 750</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8900</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">765</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">238</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#STREETTRIPLER -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#STREETTRIPLER">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">765</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Triumph</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>STREETTRIPLER</hasModelCode>
+        <hasModelName>Street Triple R</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">825</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">166</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#SUPERMETEOR650 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#SUPERMETEOR650">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">648</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Royal Enfield</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>SUPERMETEOR650</hasModelCode>
+        <hasModelName>Super Meteor 650</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">740</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">241</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#SV650 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#SV650">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">645</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Suzuki</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>SV650</hasModelCode>
+        <hasModelName>SV650</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">785</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">197</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#TENERE700 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#TENERE700">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">689</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Yamaha</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>TENERE700</hasModelCode>
+        <hasModelName>Tenere 700</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">11500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">875</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">205</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#TIGER1200GT -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#TIGER1200GT">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1160</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Triumph</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>TIGER1200GT</hasModelCode>
+        <hasModelName>Tiger 1200 GT</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">850</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">245</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#TIGER900GT -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#TIGER900GT">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">888</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Triumph</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>TIGER900GT</hasModelCode>
+        <hasModelName>Tiger 900 GT</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">13800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">820</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">219</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#TIGERSPORT660 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#TIGERSPORT660">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#TouringBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">660</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Triumph</hasBrand>
+        <hasCategory>TOURING</hasCategory>
+        <hasModelCode>TIGERSPORT660</hasModelCode>
+        <hasModelName>Tiger Sport 660</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">835</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">206</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#TMAXTECHMAX -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#TMAXTECHMAX">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CommuterBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">562</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Yamaha</hasBrand>
+        <hasCategory>COMMUTER</hasCategory>
+        <hasModelCode>TMAXTECHMAX</hasModelCode>
+        <hasModelName>TMAX Tech Max</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">14200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">800</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">220</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#TRACER9 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#TRACER9">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#TouringBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">890</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Yamaha</hasBrand>
+        <hasCategory>TOURING</hasCategory>
+        <hasModelCode>TRACER9</hasModelCode>
+        <hasModelName>Tracer 9</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">13000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">820</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">204</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#TRIDENT660 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#TRIDENT660">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">660</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Triumph</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>TRIDENT660</hasModelCode>
+        <hasModelName>Trident 660</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8900</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">805</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">189</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#V100MANDELLO -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#V100MANDELLO">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#TouringBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1042</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Moto Guzzi</hasBrand>
+        <hasCategory>TOURING</hasCategory>
+        <hasModelCode>V100MANDELLO</hasModelCode>
+        <hasModelName>V100 Mandello</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">17200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">815</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">233</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#V7STONE -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#V7STONE">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">853</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Moto Guzzi</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>V7STONE</hasModelCode>
+        <hasModelName>V7 Stone</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9700</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">780</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">218</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#V85TT -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#V85TT">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">853</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Moto Guzzi</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>V85TT</hasModelCode>
+        <hasModelName>V85 TT</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12900</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">830</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">229</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#V9BOBBER -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#V9BOBBER">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">853</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Moto Guzzi</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>V9BOBBER</hasModelCode>
+        <hasModelName>V9 Bobber</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">785</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">210</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#VERSYS1000 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#VERSYS1000">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#TouringBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1043</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Kawasaki</hasBrand>
+        <hasCategory>TOURING</hasCategory>
+        <hasModelCode>VERSYS1000</hasModelCode>
+        <hasModelName>Versys 1000</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">14500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">840</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">257</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#VERSYS650 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#VERSYS650">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#TouringBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">649</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Kawasaki</hasBrand>
+        <hasCategory>TOURING</hasCategory>
+        <hasModelCode>VERSYS650</hasModelCode>
+        <hasModelName>Versys 650</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">845</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">219</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#VSTROM650 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#VSTROM650">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">645</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Suzuki</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>VSTROM650</hasModelCode>
+        <hasModelName>V-Strom 650</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8900</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">835</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">213</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#VSTROM800DE -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#VSTROM800DE">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">776</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Suzuki</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>VSTROM800DE</hasModelCode>
+        <hasModelName>V-Strom 800DE</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">11400</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">855</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">230</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#W800 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#W800">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CruiserBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">773</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Kawasaki</hasBrand>
+        <hasCategory>CRUISER</hasCategory>
+        <hasModelCode>W800</hasModelCode>
+        <hasModelName>W800</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">790</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">226</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#XL750TRANSALP -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#XL750TRANSALP">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">755</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Honda</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>XL750TRANSALP</hasModelCode>
+        <hasModelName>XL750 Transalp</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">850</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">208</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#XMAX300 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#XMAX300">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CommuterBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">292</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>Yamaha</hasBrand>
+        <hasCategory>COMMUTER</hasCategory>
+        <hasModelCode>XMAX300</hasModelCode>
+        <hasModelName>XMAX 300</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">795</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">183</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#XSR700 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#XSR700">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">689</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Yamaha</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>XSR700</hasModelCode>
+        <hasModelName>XSR700</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8700</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">835</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">186</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#XSR900 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#XSR900">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">890</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Yamaha</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>XSR900</hasModelCode>
+        <hasModelName>XSR900</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">810</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">193</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#YZFR1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#YZFR1">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">998</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Yamaha</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>YZFR1</hasModelCode>
+        <hasModelName>YZF-R1</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">21000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">855</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">199</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#Z650 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#Z650">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">649</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>Kawasaki</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>Z650</hasModelCode>
+        <hasModelName>Z650</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">790</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">187</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#ZX10R -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#ZX10R">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">998</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>Kawasaki</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>ZX10R</hasModelCode>
+        <hasModelName>ZX-10R</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">18000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">830</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">207</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#1290SUPERADVENTURES -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#1290SUPERADVENTURES">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1301</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>KTM</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>1290SUPERADVENTURES</hasModelCode>
+        <hasModelName>1290 Super Adventure S</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">860</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">243</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#1290SUPERDUKER -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#1290SUPERDUKER">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1301</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>KTM</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>1290SUPERDUKER</hasModelCode>
+        <hasModelName>1290 Super Duke R</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">21000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">835</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">200</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#250DUKE -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#250DUKE">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">249</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>KTM</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>250DUKE</hasModelCode>
+        <hasModelName>250 Duke</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4300</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">820</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">163</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#300NK -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#300NK">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">292</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>CFMOTO</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>300NK</hasModelCode>
+        <hasModelName>300NK</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">795</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">151</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#300SR -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#300SR">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">292</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>CFMOTO</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>300SR</hasModelCode>
+        <hasModelName>300SR</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">780</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">165</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#390ADVENTURE -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#390ADVENTURE">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">373</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>KTM</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>390ADVENTURE</hasModelCode>
+        <hasModelName>390 Adventure</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7000</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">855</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">172</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#390SMCR -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#390SMCR">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#CommuterBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">373</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>KTM</hasBrand>
+        <hasCategory>COMMUTER</hasCategory>
+        <hasModelCode>390SMCR</hasModelCode>
+        <hasModelName>390 SMC R</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">890</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">154</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#450NK -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#450NK">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">449</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>CFMOTO</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>450NK</hasModelCode>
+        <hasModelName>450NK</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5600</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">795</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">165</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#450SR -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#450SR">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#SportBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">449</engineSizeCc>
+        <experienceLevel>BEGINNER</experienceLevel>
+        <hasBrand>CFMOTO</hasBrand>
+        <hasCategory>SPORT</hasCategory>
+        <hasModelCode>450SR</hasModelCode>
+        <hasModelName>450SR</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">795</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">168</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#650MT -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#650MT">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#TouringBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">649</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>CFMOTO</hasBrand>
+        <hasCategory>TOURING</hasCategory>
+        <hasModelCode>650MT</hasModelCode>
+        <hasModelName>650MT</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">820</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">213</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#650NK -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#650NK">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">649</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>CFMOTO</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>650NK</hasModelCode>
+        <hasModelName>650NK</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6400</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">815</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">206</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#700CLX -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#700CLX">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">693</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>CFMOTO</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>700CLX</hasModelCode>
+        <hasModelName>700CL-X</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7600</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">800</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">196</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#790DUKE -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#790DUKE">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">799</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>KTM</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>790DUKE</hasModelCode>
+        <hasModelName>790 Duke</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">825</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">189</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#800MT -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#800MT">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#AdventureBike"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">799</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>CFMOTO</hasBrand>
+        <hasCategory>ADVENTURE</hasCategory>
+        <hasModelCode>800MT</hasModelCode>
+        <hasModelName>800MT</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9800</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">825</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">231</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#890DUKER -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#890DUKER">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">889</engineSizeCc>
+        <experienceLevel>INTERMEDIATE</experienceLevel>
+        <hasBrand>KTM</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>890DUKER</hasModelCode>
+        <hasModelName>890 Duke R</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">13200</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">834</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">186</weightKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/moto-advisor#990DUKE -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/moto-advisor#990DUKE">
+        <rdf:type rdf:resource="http://example.org/moto-advisor#Motorcycle"/>
+        <rdf:type rdf:resource="http://example.org/moto-advisor#NakedBike"/>
+        <available rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</available>
+        <engineSizeCc rdf:datatype="http://www.w3.org/2001/XMLSchema#int">947</engineSizeCc>
+        <experienceLevel>ADVANCED</experienceLevel>
+        <hasBrand>KTM</hasBrand>
+        <hasCategory>NAKED</hasCategory>
+        <hasModelCode>990DUKE</hasModelCode>
+        <hasModelName>990 Duke</hasModelName>
+        <priceEur rdf:datatype="http://www.w3.org/2001/XMLSchema#int">14500</priceEur>
+        <seatHeightMm rdf:datatype="http://www.w3.org/2001/XMLSchema#int">825</seatHeightMm>
+        <weightKg rdf:datatype="http://www.w3.org/2001/XMLSchema#int">192</weightKg>
+    </owl:NamedIndividual>
 </rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.5.1.2024-09-07T21:41:32Z) https://github.com/owlcs/owlapi/ -->
+
 
